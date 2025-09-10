@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: beresta-chat
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: UPLOAD_DIR
+        value: /tmp/uploads
+      - key: DB_PATH
+        value: /tmp/beresta.db
+    staticPublishPath: ./client
